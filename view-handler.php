@@ -3,14 +3,14 @@
  * Author: Christopher Bartholomew
  * Description:
  * 
- * The ViewHandler library is an interface/class that assists in dynamic rendering / replacement of php template files.
+ * The view-handler library is an interface/class that assists in dynamic rendering / replacement of php template files.
  * This is favorable to those who don't necessarily want consume themselves with a new framework, and they would like a
  * simple way to have that MVC feel. This library is a simple setup and allows for any customzation. 
  * 
- * // set the paths up in Configuration.php for where the views are located.
+ * // set the paths up in view-configuration.php for where the views are located.
  * 
  * // then create a custom key to identify the view - provide the path including file extension.
- * $view = new ViewHandler("HELLO_WORLD","HelloWorld.php");
+ * $view = new ViewHandler("HELLO_WORLD","helloworld.php");
  *
  * // add view arguments that you defined in the hello world template, such as YOUR_NAME and VIEW_NAME
  * // note - you don't need to add the hashes (#) here, but you do need to add them in the template.
@@ -135,8 +135,8 @@ class ViewHandler implements IViewHandler
 		    	// get header
 		    	$html .= file_get_contents($this->_viewDetails[HEADER_VIEW]);
 			
-		    // get template
-		    $html .= file_get_contents($this->_viewDetails[$this->_viewName]);
+		    	// get template
+		    	$html .= file_get_contents($this->_viewDetails[$this->_viewName]);
 			
 			if($includeFooter)
 		    	// get footer
